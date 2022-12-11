@@ -1,0 +1,83 @@
+body {
+    color: #aaa;
+}
+
+a {
+    color: #aaa;
+}
+
+a:hover {
+    text-decoration: none;
+    color: rgba(0,0,0,.7);
+}
+
+#header{
+    padding-top: 30px;
+    border-bottom: 1px solid #999;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.nav-link {
+    color: #999;
+}
+
+.form-box {
+    max-width: 300px;
+    margin: auto;
+}
+
+.group-input {
+    width: 100%;
+    margin: 15px 0;
+    background-color: #f6f6f6;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+}
+
+.form-box .fas {
+    width: 15%;
+    padding: 10px 5px;
+    text-align: center;
+}
+
+.form-box input {
+    width: 85%;
+    padding: 10px 5px;
+    background-color: transparent;
+    border: none;
+}
+
+.form-box .submit {
+    display: block;
+    width: 150px;
+    margin: 50px auto 10px;
+    padding: 5px 10px;
+    background: #35c594;
+    color: #fff;
+    border-radius: 3px;
+}
+
+.options {
+    display: flex;
+    max-width: 300px;
+    margin: 30px auto;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.notification {
+    display: block;
+    position: relative;
+    padding: 5px 10px;
+    background-color: #f1c40f;
+    color: #333;
+    text-align: center;
+}
+
+#emailcheck:not(:empty) {
+    padding: 5px 15px;
+    color: #f00;
+}

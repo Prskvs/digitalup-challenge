@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="css/reboot.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css" />
+    <link rel="stylesheet" href="css/fontawesome-all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <nav class="navbar navbar-expand-md navbar-light">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div id="navigation" class="collapse navbar-collapse">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ website }}">Αρχική</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Υπηρεσίες</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ website }}/index.php?a=profile">Προφίλ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Προϊόντα</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Επικοινωνία</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    {{ message }}
+
+    <main id="content">
+        <div class="container">
+            {{ body }}
+        </div>
+    </main>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

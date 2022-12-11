@@ -1,0 +1,53 @@
+<div class="" style="max-width: 300px; margin: 65px auto 35px;">
+    Need to send images, audio files, and/or videos over text message to send a better message to your potential or current customers?<br />
+    Our service allows you to complete any of these actions using our fighly functional API and web service Twitter Art (amall web-r
+</div>
+
+<h5 class="text-center" style="margin: 30px auto 30px;"><strong>Δημιουργήστε έναν Λογαριασμό!</strong></h5>
+
+<form class="form-box" action="{{ website }}/index.php?a=register" method="post">
+    <div class="group-input">
+        <i class="fas fa-user"></i><input type="text" name="username" value="{{ username }}" placeholder="Ονοματεπώνυμο" required />
+    </div>
+    <div class="group-input">
+        <i class="fas fa-user"></i><input type="email" id="email" name="email" value="{{ email }}" placeholder="Email" required />
+        <span id="emailcheck"></span>
+    </div>
+    <div class="group-input">
+        <i class="fas fa-lock"></i><input type="password" name="password" placeholder="Κωδικός Πρόσβασης" required />
+    </div>
+    <div class="group-input">
+        <i class="fas fa-lock"></i><input type="password" name="password_confirmation" placeholder="Επανάληψη Κωδικού Πρόσβασης" required />
+    </div>
+
+    <input type="submit" class="submit" name="register" value="Sign Up" />
+</form>
+
+<div class="options">
+    <a class="text-center" href="{{ website }}/index.php?a=login">Έχετε ήδη λογαριασμό; Επιστροφή στην σελίδα σύνδεσης</a>
+</div>
+
+<script type="text/javascript">
+
+    var ajax = new XMLHttpRequest ();
+    var span = document.getElementById ('emailcheck');
+
+    setInterval (function () {
+        ajax.onreadystatechange = response ();
+    }, 1000);
+
+    function response () {
+        if (ajax.readyState == 4 && ajax.status == 200) {
+            var json = JSON.parse (ajax.responseText);
+            if (json[0] == true)
+                span.innerHTML = 'Το Email αυτό υπάρχει.';
+            else {
+                span.innerHTML = '';
+            }
+        }
+
+        var email = document.getElementById ('email');
+        ajax.open ("POST", '{{ website }}/index.php?a=checkemailjson', true);
+        ajax.send (email.value);
+    }
+</script>

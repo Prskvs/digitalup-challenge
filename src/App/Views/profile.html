@@ -1,0 +1,15 @@
+<h5 class="text-center" style="margin: 30px 10px;">Γεια σου {{ user_name }}</h5>
+
+<div class="mx-auto text-center">
+    <h5 class="text-center"><strong>Στοιχεία χρήστη</strong></h5>
+    <div>
+        <strong>Όνομα:</strong> <span>{{ user_name }}</span>
+    </div>
+    <div>
+        <strong>Email:</strong> <span>{{ user_email }}</span>
+    </div>
+</div>
+
+<div class="options" style="margin-top: 30px;">
+    <a class="mx-auto" href="{{ website }}/index.php?a=logout">Αποσύνδεση</a>
+</div>
