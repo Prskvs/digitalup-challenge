@@ -8,10 +8,10 @@ a {
 
 a:hover {
     text-decoration: none;
-    color: rgba(0,0,0,.7);
+    color: rgba(0, 0, 0, .7);
 }
 
-#header{
+#header {
     padding-top: 30px;
     border-bottom: 1px solid #999;
 }

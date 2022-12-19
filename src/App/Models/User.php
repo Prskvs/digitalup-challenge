@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Models;
 
 use PDO;
@@ -40,8 +41,7 @@ class User {
             $stmt->execute();
 
             $user = $stmt->fetch();
-        }
-        catch (PDOException $e) {
+        } catch (PDOException $e) {
             echo $e->getMessage();
         }
 
@@ -68,9 +68,7 @@ class User {
                 $stmt->bindValue(':email', $this->email, PDO::PARAM_STR);
 
                 return $stmt->execute();
-
-            }
-            catch (PDOException $e) {
+            } catch (PDOException $e) {
                 echo $e->getMessage();
             }
         }
@@ -116,10 +114,8 @@ class User {
                 return true;
             else
                 return false;
-        }
-        catch (PDOException $e) {
+        } catch (PDOException $e) {
             echo $e->getMessage();
         }
     }
 }
-?>

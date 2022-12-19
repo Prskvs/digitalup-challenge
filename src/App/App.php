@@ -17,8 +17,7 @@ class App {
                 static::render($this->action);
             else
                 static::render('404');
-        }
-        else
+        } else
             static::render('index');
     }
 
@@ -35,8 +34,7 @@ class App {
         if (isset($_SESSION['message'])) {
             $message = '<div class="notification">' . $_SESSION['message'] . '</div>';
             unset($_SESSION['message']);
-        }
-        else
+        } else
             $message = '';
 
         echo str_replace([
@@ -49,22 +47,22 @@ class App {
             '{{ user_name }}',
             '{{ user_email }}',
         ], [
-            ucfirst($action),
-            $message,
-            $view,
-            'http://' . _ROOT,
-            $_SESSION['username'] ?? '',
-            $_SESSION['email'] ?? '',
-            $_SESSION['user_name'] ?? '',
-            $_SESSION['user_email'] ?? '',
-        ], $tmpl);
+                ucfirst($action),
+                $message,
+                $view,
+                'http://' . _ROOT,
+                $_SESSION['username'] ?? '',
+                $_SESSION['email'] ?? '',
+                $_SESSION['user_name'] ?? '',
+                $_SESSION['user_email'] ?? '',
+            ], $tmpl);
 
         unset($_SESSION['username']);
         unset($_SESSION['email']);
     }
 
     public static function redirect(string $url = '') {
-        header('Location: http://' . _ROOT . '/index.php' . (! empty($url) ? '?a=' . strtolower($url) : ''));
+        header('Location: http://' . _ROOT . '/index.php' . (!empty($url) ? '?a=' . strtolower($url) : ''));
         exit;
     }
 }

@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controllers;
 
 use App\App;
@@ -6,12 +7,12 @@ use \App\Models\User;
 
 class Account {
     public static function indexPage() {
-        if (! isset($_SESSION['user_name']))
+        if (!isset($_SESSION['user_name']))
             App::redirect('login');
     }
 
     public static function profilePage() {
-        if (! isset($_SESSION['user_name'])) {
+        if (!isset($_SESSION['user_name'])) {
             $_SESSION['message'] = 'Πρέπει να είστε συνδεδεμένος για να δείτε το περιεχόμενο αυτής της σελίδας.';
             App::redirect('login');
         }
@@ -28,8 +29,7 @@ class Account {
                 $_SESSION['user_email'] = $valid_user->email;
 
                 App::redirect('profile');
-            }
-            else {
+            } else {
                 $_SESSION['message'] = 'Το Όνομα χρήστη ή ο Κωδικός δεν είναι σωστό.';
                 App::redirect('login');
             }
@@ -45,8 +45,7 @@ class Account {
                 unset($_SESSION['username']);
                 unset($_SESSION['email']);
                 App::redirect();
-            }
-            else {
+            } else {
                 $_SESSION['username'] = $user->username;
                 $_SESSION['email'] = $user->email;
                 App::redirect('register');
@@ -82,4 +81,3 @@ class Account {
         echo json_encode(array($check));
     }
 }
-?>

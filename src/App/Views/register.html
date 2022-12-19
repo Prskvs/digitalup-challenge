@@ -29,16 +29,16 @@
 
 <script type="text/javascript">
 
-    var ajax = new XMLHttpRequest ();
-    var span = document.getElementById ('emailcheck');
+    var ajax = new XMLHttpRequest();
+    var span = document.getElementById('emailcheck');
 
-    setInterval (function () {
-        ajax.onreadystatechange = response ();
+    setInterval(function () {
+        ajax.onreadystatechange = response();
     }, 1000);
 
-    function response () {
+    function response() {
         if (ajax.readyState == 4 && ajax.status == 200) {
-            var json = JSON.parse (ajax.responseText);
+            var json = JSON.parse(ajax.responseText);
             if (json[0] == true)
                 span.innerHTML = 'Το Email αυτό υπάρχει.';
             else {
@@ -46,8 +46,8 @@
             }
         }
 
-        var email = document.getElementById ('email');
-        ajax.open ("POST", '{{ website }}/index.php?a=checkemailjson', true);
-        ajax.send (email.value);
+        var email = document.getElementById('email');
+        ajax.open("POST", '{{ website }}/index.php?a=checkemailjson', true);
+        ajax.send(email.value);
     }
 </script>
